@@ -519,3 +519,41 @@ input:focus, textarea:focus{
 .project-card:hover h3{
   color: var(--accent);
 }
+
+/* Background logo watermark */
+.bg-logo{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;          /* kontrolira veličinu */
+  height: 520px;
+  background: url("../assets/logo.jpg") center / contain no-repeat;
+  
+  opacity: 0.06;         /* ključ – suptilno */
+  pointer-events: none;  /* ne blokira klikove */
+  z-index: 0;
+}
+
+/* sadržaj iznad loga */
+main, header, section, footer{
+  position: relative;
+  z-index: 1;
+}
+
+.bg-logo{
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{ transform: translate(-50%, -50%); }
+  50%{ transform: translate(-50%, -52%); }
+}
+
+@media (max-width: 768px){
+  .bg-logo{
+    width: 320px;
+    height: 320px;
+    opacity: 0.04;
+  }
+}
