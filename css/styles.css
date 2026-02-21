@@ -456,19 +456,19 @@ input:focus, textarea:focus{
   margin-top: 20px;
 }
 
-/* Project card */
+/* Project card (FIXED: no hover flicker) */
 .project-card{
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: transform .25s ease;
+  transition: none;          /* ne mičemo cijelu karticu */
 }
 
 .project-card:hover{
-  transform: translateY(-6px);
+  transform: none;
 }
 
-/* Square image */
+/* Image frame */
 .project-image{
   aspect-ratio: 16 / 10;
   border-radius: var(--r);
@@ -478,20 +478,33 @@ input:focus, textarea:focus{
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;        /* FIX: za ::after overlay */
 }
 
+/* Screenshot */
 .project-image img{
   width: 92%;
   height: 92%;
-  object-fit: contain;   /* ključno: ne reže */
+  object-fit: contain;
   border: none;
   border-radius: calc(var(--r) - 4px);
   background: rgba(245,247,255,.02);
-  box-shadow: 0 0 30px rgba(124,219,255,.10)
+  box-shadow: 0 0 30px rgba(124,219,255,.10);
+
+  transform: translateZ(0);  /* stabilnije renderanje */
+  will-change: transform;
+  transition: transform .25s ease, filter .25s ease; /* FIX: smooth */
 }
 
-.project-card:hover img{
-  transform: scale(1.06);
+/* Hover effect (only image + border/glow) */
+.project-card:hover .project-image img{
+  transform: scale(1.03);    /* suptilnije, manje “skakanja” */
+  filter: brightness(1.03);
+}
+
+.project-card:hover .project-image{
+  border-color: rgba(124,219,255,.30);
+  box-shadow: 0 0 24px rgba(124,219,255,.08);
 }
 
 /* Neon hover glow (subtle) */
@@ -501,7 +514,8 @@ input:focus, textarea:focus{
   inset:0;
   background: radial-gradient(circle at center, rgba(124,219,255,.18), transparent 70%);
   opacity:0;
-  transition:.3s;
+  transition: opacity .25s ease;
+  pointer-events: none;      /* FIX: overlay ne smije hvatati hover */
 }
 
 .project-card:hover .project-image::after{
@@ -514,6 +528,7 @@ input:focus, textarea:focus{
   font-weight: 600;
   font-size: 16px;
   color: var(--fg);
+  transition: color .2s ease;
 }
 
 .project-card:hover h3{
