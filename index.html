@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+         <ul class="navbar navbar-center">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+
+            <li class="nav-brand">
+                <span class="brand" href="#top" aria-label="Go to top">Portfolio</span>
+            </li>
+
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+         </ul>
+        </nav>
+    </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container">
+        <h1>Grbic Agency</h1>
+        <p>Websites, ads, and strategy designed to grow your business.</p>
+        <a class="btn" href="#projects">View projects</a>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container two-col">
+        <div class="media">
+          <div class="about-img">
+            <img src="assets/me.jpg" alt="Petar">
+          </div>
+        </div>
+
+        <div class="content">
+          <h2>About </h2>
+          <p>As a young entrepreneur, I focus on helping businesses grow through modern websites, paid advertising, and strategic thinking. I believe that strong digital presence is built through simplicity, clarity, and performance, not complexity.</p>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="container">
+        <h2>Services</h2>
+
+        <div class="grid services-grid">
+
+          <article class="card service-card s1">
+            
+            <div class="service-image">
+              <img src="assets/web.jpg" alt="Web development">
+            </div>
+
+            <h3>Web Development</h3>
+            <ul class="service-list">
+              <li>Modern, fast, mobile-first websites</li>
+              <li>Conversion-focused structure</li>
+              <li>SEO and performance basics</li>
+              <li>Booking, forms, integrations</li>
+            </ul>
+            <a class="btn btn-ghost service-cta" href="#contact">Build my website</a>
+          </article>
+
+          <article class="card service-card s2">
+            
+            <div class="service-image">
+              <img src="assets/meta.jpg" alt="Meta Paid Advertising">
+            </div>
+
+            <h3>Meta Paid Advertising</h3>
+            <ul class="service-list">
+              <li>Campaign setup and targeting</li>
+              <li>Lead generation and testing</li>
+              <li>Creative and funnel structure</li>
+              <li>Performance tracking</li>
+            </ul>
+            <a class="btn btn-ghost service-cta" href="#contact">Start ads</a>
+          </article>
+
+          <article class="card service-card s3">
+            
+            <div class="service-image">
+              <img src="assets/gds.jpg" alt="Growth & Digital Strategy">
+            </div>
+
+            <h3>Growth & Digital Strategy</h3>
+            <ul class="service-list">
+              <li>Website + ads + funnel alignment</li>
+              <li>Customer journey optimization</li>
+              <li>Conversion and analytics insights</li>
+              <li>Long-term growth planning</li>
+            </ul>
+            <a class="btn btn-ghost service-cta" href="#contact">Grow my business</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <div class="grid projects-grid">
+
+          <a href="https://apartmentsgrbic.com" target="_blank" rel="noopener" class="project-card">
+            <div class="project-image">
+              <img
+                src="https://api.microlink.io/?url=https://apartmentsgrbic.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1400&viewport.height=900"
+                alt="Apartments Grbić website preview"
+                loading="lazy"
+              />
+            </div>
+            <h3>Apartments Grbić</h3>
+          </a>
+
+          <a href="https://example.com" target="_blank" rel="noopener" class="project-card">
+            <div class="project-image">
+              <img
+                src="https://api.microlink.io/?url=https://example.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1400&viewport.height=900"
+                alt="Head Spa website preview"
+                loading="lazy"
+              />
+            </div>
+            <h3>Head Spa</h3>
+          </a>
+
+          <a href="https://example.com" target="_blank" rel="noopener" class="project-card">
+            <div class="project-image">
+              <img
+                src="https://api.microlink.io/?url=https://example.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1400&viewport.height=900"
+                alt="Boat Tours website preview"
+                loading="lazy"
+              />
+            </div>
+            <h3>Boat Tours</h3>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Send a message. I reply fast.</p>
+
+        <form class="form" id="contactForm" action="https://formspree.io/f/xreayqjv" method="POST">
+          
+          <!-- Hidden fields for email -->
+          <input type="hidden" name="_subject" value="New message from portfolio">
+          <input type="hidden" name="_format" value="plain">
+
+          <input type="text" name="_gotcha" style="display:none">
+
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn" type="submit">Send</button>
+            <p class="hint" id="formHint">Fill the form and send.</p>
+          </div>
+        </form>
+
+        <div class="contact-links">
+          <a href="mailto:thepetargrbic@gmail.com">thepetargrbic@gmail.com</a>
+          <span class="dot">·</span>
+          <a href="https://www.linkedin.com/in/petar-grbi%C4%87-455880398/" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="dot">·</span>
+          <a href="https://github.com/grba-a?tab=repositories" target="_blank" rel="noopener">GitHub</a>
+          <span class="dot">·</span>
+          <a href="https://www.instagram.com/grbicpetarr/" target="_blank" rel="noopener">Instagram</a>
+          <span class="dot">·</span>
+          <a href="https://web.facebook.com/petaargrbic?locale=hr_HR" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Petar Grbić</p>
+      <a href="#top" class="to-top" aria-label="Back to top">Top</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
